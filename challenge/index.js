@@ -1,3 +1,4 @@
 const posts = require('./posts')
-const {} = require('../lib')
+const lib = require('../lib')
 
+console.log(lib)
