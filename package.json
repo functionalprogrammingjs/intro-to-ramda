@@ -1,0 +1,27 @@
+{
+  "name": "intro-to-ramda",
+  "version": "1.0.0",
+  "description": "An introductory workshop for using Ramda",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/functionalprogrammingjs/intro-to-ramda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/functionalprogrammingjs/intro-to-ramda/issues"
+  },
+  "homepage": "https://github.com/functionalprogrammingjs/intro-to-ramda#readme",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "ramda": "^0.26.1"
+  }
+}
