@@ -8,8 +8,8 @@ Given a set of posts to do with a functional approach:
 
 ## Folders
 
-- Challenge: where implement your solution
-- Where implements ramda functions
+- `challenge`: where implement your solution
+- `lib`: Where implements ramda functions
 
 ## Post examples
 
@@ -17,103 +17,250 @@ Given a set of posts to do with a functional approach:
 const posts = [
   {
     id: 1,
-    title: 'dicta',
-    author: 'Dorcas Greenholt MD',
+    title: 'qui',
+    author: 'Vincenza Schuster Sr.',
     url: '/posts/1',
-    published: 1548629830761,
-    tags: [
-      'monad',
-      'composition',
-      'reactive programing',
-      'partial application'
-    ],
-    displayDate: '2019-01-27T22:57:10.761Z'
+    published: 1554273834917,
+    tags: ['functional programming', 'functor', 'monad', 'reactive programing'],
+    displayDate: '2019-04-03T06:43:54.917Z'
   },
   {
     id: 2,
-    title: 'sapiente',
-    author: 'Lucius Skiles PhD',
+    title: 'reprehenderit',
+    author: 'Mr. Doyle Goodwin',
     url: '/posts/2',
-    published: 1553420098891,
-    tags: ['monad', 'functor', 'functional programming', 'reactive programing'],
-    displayDate: '2019-03-24T09:34:58.891Z'
+    published: 1548859187440,
+    tags: ['functional programming', 'reactive programing', 'functor', 'HOF'],
+    displayDate: '2019-01-30T14:39:47.440Z'
   },
   {
     id: 3,
-    title: 'et',
-    author: 'Curt Nitzsche',
+    title: 'dolores',
+    author: 'Rudolph Reilly',
     url: '/posts/3',
-    published: 1547416866160,
-    tags: ['monad', 'functor', 'reactive programing', 'functional programming'],
-    displayDate: '2019-01-13T22:01:06.160Z'
+    published: 1551858558087,
+    tags: ['composition', 'monad', 'functor', 'HOF'],
+    displayDate: '2019-03-06T07:49:18.087Z'
   },
   {
     id: 4,
-    title: 'quibusdam',
-    author: 'Leora Wiegand I',
+    title: 'hic',
+    author: 'Joshua Mills',
     url: '/posts/4',
-    published: 1554582319249,
-    tags: ['functional programming', 'reactive programing', 'functor', 'HOF'],
-    displayDate: '2019-04-06T20:25:19.249Z'
+    published: 1549063917383,
+    tags: [
+      'functional programming',
+      'monad',
+      'composition',
+      'reactive programing'
+    ],
+    displayDate: '2019-02-01T23:31:57.383Z'
   },
   {
     id: 5,
-    title: 'dolorem',
-    author: 'Ms. Jonatan Gorczany',
+    title: 'possimus',
+    author: 'Ardith Hills Sr.',
     url: '/posts/5',
-    published: 1554520357391,
-    tags: ['functor', 'monad', 'reactive programing', 'functional programming'],
-    displayDate: '2019-04-06T03:12:37.391Z'
-  },
-  {
-    id: 6,
-    title: 'aliquid',
-    author: 'Mireille Altenwerth',
-    url: '/posts/6',
-    published: 1548584168916,
+    published: 1549123181102,
     tags: [
-      'functional programming',
       'functor',
+      'functional programming',
       'reactive programing',
       'composition'
     ],
-    displayDate: '2019-01-27T10:16:08.916Z'
+    displayDate: '2019-02-02T15:59:41.102Z'
+  },
+  {
+    id: 6,
+    title: 'voluptatem',
+    author: 'Nick Schmeler',
+    url: '/posts/6',
+    published: 1553299404935,
+    tags: [
+      'functional programming',
+      'composition',
+      'functor',
+      'reactive programing'
+    ],
+    displayDate: '2019-03-23T00:03:24.935Z'
   },
   {
     id: 7,
-    title: 'temporibus',
-    author: 'Elsa Jaskolski',
+    title: 'et',
+    author: 'Alexandro Howe',
     url: '/posts/7',
-    published: 1553669667662,
-    tags: ['reactive programing', 'functor', 'composition', 'monad'],
-    displayDate: '2019-03-27T06:54:27.662Z'
+    published: 1546780644102,
+    tags: ['functional programming', 'functor', 'monad', 'reactive programing'],
+    displayDate: '2019-01-06T13:17:24.102Z'
   },
   {
     id: 8,
-    title: 'ratione',
-    author: 'Ara Brown',
+    title: 'blanditiis',
+    author: 'Enrique Kiehn Jr.',
     url: '/posts/8',
-    published: 1552387520677,
-    tags: ['functor', 'monad', 'reactive programing', 'functional programming'],
-    displayDate: '2019-03-12T10:45:20.677Z'
+    published: 1548291880538,
+    tags: ['functor', 'functional programming', 'monad', 'composition'],
+    displayDate: '2019-01-24T01:04:40.538Z'
   },
   {
     id: 9,
-    title: 'ab',
-    author: 'Remington Rohan',
+    title: 'autem',
+    author: 'Llewellyn Ferry',
     url: '/posts/9',
-    published: 1547281191880,
-    tags: ['functional programming', 'curry', 'functor', 'monad'],
-    displayDate: '2019-01-12T08:19:51.880Z'
+    published: 1550672609202,
+    tags: ['functional programming', 'monad', 'functor', 'reactive programing'],
+    displayDate: '2019-02-20T14:23:29.202Z'
   },
   {
     id: 10,
-    title: 'soluta',
-    author: 'Melody Greenfelder',
+    title: 'voluptas',
+    author: 'Lulu Rolfson',
     url: '/posts/10',
-    published: 1546759488258,
-    tags: ['monad', 'HOF', 'functional programming', 'functor'],
-    displayDate: '2019-01-06T07:24:48.258Z'
+    published: 1546388026403,
+    tags: [
+      'functional programming',
+      'functor',
+      'partial application',
+      'composition'
+    ],
+    displayDate: '2019-01-02T00:13:46.403Z'
   }
 ]
+```
+
+## Result examples
+
+```js
+const result = {
+  'functional programming': [
+    {
+      id: 1,
+      title: 'qui',
+      author: 'Vincenza Schuster Sr.',
+      url: '/posts/1',
+      published: 1554273834917,
+      tags: [
+        'functional programming',
+        'functor',
+        'monad',
+        'reactive programing'
+      ],
+      displayDate: '2019-04-03T06:43:54.917Z',
+      tag: 'functional programming'
+    },
+    {
+      id: 6,
+      title: 'voluptatem',
+      author: 'Nick Schmeler',
+      url: '/posts/6',
+      published: 1553299404935,
+      tags: [
+        'functional programming',
+        'composition',
+        'functor',
+        'reactive programing'
+      ],
+      displayDate: '2019-03-23T00:03:24.935Z',
+      tag: 'functional programming'
+    }
+  ],
+  functor: [
+    {
+      id: 1,
+      title: 'qui',
+      author: 'Vincenza Schuster Sr.',
+      url: '/posts/1',
+      published: 1554273834917,
+      tags: [
+        'functional programming',
+        'functor',
+        'monad',
+        'reactive programing'
+      ],
+      displayDate: '2019-04-03T06:43:54.917Z',
+      tag: 'functor'
+    },
+    {
+      id: 6,
+      title: 'voluptatem',
+      author: 'Nick Schmeler',
+      url: '/posts/6',
+      published: 1553299404935,
+      tags: [
+        'functional programming',
+        'composition',
+        'functor',
+        'reactive programing'
+      ],
+      displayDate: '2019-03-23T00:03:24.935Z',
+      tag: 'functor'
+    }
+  ],
+  monad: [
+    {
+      id: 1,
+      title: 'qui',
+      author: 'Vincenza Schuster Sr.',
+      url: '/posts/1',
+      published: 1554273834917,
+      tags: [
+        'functional programming',
+        'functor',
+        'monad',
+        'reactive programing'
+      ],
+      displayDate: '2019-04-03T06:43:54.917Z',
+      tag: 'monad'
+    }
+  ],
+  'reactive programing': [
+    {
+      id: 1,
+      title: 'qui',
+      author: 'Vincenza Schuster Sr.',
+      url: '/posts/1',
+      published: 1554273834917,
+      tags: [
+        'functional programming',
+        'functor',
+        'monad',
+        'reactive programing'
+      ],
+      displayDate: '2019-04-03T06:43:54.917Z',
+      tag: 'reactive programing'
+    },
+    {
+      id: 6,
+      title: 'voluptatem',
+      author: 'Nick Schmeler',
+      url: '/posts/6',
+      published: 1553299404935,
+      tags: [
+        'functional programming',
+        'composition',
+        'functor',
+        'reactive programing'
+      ],
+      displayDate: '2019-03-23T00:03:24.935Z',
+      tag: 'reactive programing'
+    }
+  ],
+  composition: [
+    {
+      id: 6,
+      title: 'voluptatem',
+      author: 'Nick Schmeler',
+      url: '/posts/6',
+      published: 1553299404935,
+      tags: [
+        'functional programming',
+        'composition',
+        'functor',
+        'reactive programing'
+      ],
+      displayDate: '2019-03-23T00:03:24.935Z',
+      tag: 'composition'
+    }
+  ]
+}
 ```
