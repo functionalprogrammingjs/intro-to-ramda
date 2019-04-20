@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "Jest --watch"
+    "test": "Jest --watch",
+    "dev": "nodemon challenge/index.js"
   },
   "repository": {
     "type": "git",

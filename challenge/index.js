@@ -1,4 +1,6 @@
 const posts = require('./posts')
-const lib = require('../lib')
+const filterWithin30Days = require('./filterWithin30Days')
 
-console.log(lib)
+console.log(
+  filterWithin30Days(posts)
+)
