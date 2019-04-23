@@ -1,14 +1,17 @@
 const faker = require('faker')
 
+faker.seed(123)
+
 const {
   times,
   inc,
   take,
   pipe,
-  useWith
+  compose,
+  sort,
 } = require('ramda')
 
-const shuffle = (xs) => [...xs].sort(() => 0.5 - Math.random())
+const shuffle = sort(() => 0.5 - faker.random.number({min: 0, max: 1, precision: 0.0000000000001}))
 
 const tags = () => [
   'functional programming',
@@ -31,17 +34,20 @@ const randomTags = pipe(
 
 const post = (id) => {
   const published = faker.date.between(new Date(`${new Date().getFullYear()}-01-01`), new Date())
+
   return {
     'id': id,
-    'title': faker.lorem.word(),
+    'title': faker.lorem.sentence().replace('.', ''),
     'author': faker.name.findName(),
     'url': `/posts/${id}`,
     'published': published.getTime(),
     'tags': randomTags(),
-    'displayDate': published
+    'displayDate': published,
+    likes: faker.random.number(100),
+    dislikes: faker.random.number(30),
   }
 }
 
-const posts = times(useWith(post, [inc]), 10)
+const posts = times(compose(post, inc), 10)
 
 module.exports = posts

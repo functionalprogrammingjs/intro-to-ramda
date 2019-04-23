@@ -2,9 +2,16 @@
 
 Given a set of posts to do with a functional approach:
 
-- Filter posts older than a date.
-- Group the posts by their tags.
-- Sort each tag listing by published date, descending.
+1. Sort posts by descending date (if equal, alphabetically by title)
+2. Group posts by tag
+3. (1) + (2)
+4. (3) + only recent posts (last 30 days)
+5. Show newest post
+6. Show newest post for each tag
+7. Show newest AND oldest post for each tag
+8. Get mean post score
+9. Get mean post score for each tag
+10. Get the score deviation for each tag
 
 ## Folders
 
@@ -16,251 +23,164 @@ Given a set of posts to do with a functional approach:
 ```js
 const posts = [
   {
-    id: 1,
-    title: 'qui',
-    author: 'Vincenza Schuster Sr.',
-    url: '/posts/1',
-    published: 1554273834917,
-    tags: ['functional programming', 'functor', 'monad', 'reactive programing'],
-    displayDate: '2019-04-03T06:43:54.917Z'
-  },
-  {
-    id: 2,
-    title: 'reprehenderit',
-    author: 'Mr. Doyle Goodwin',
-    url: '/posts/2',
-    published: 1548859187440,
-    tags: ['functional programming', 'reactive programing', 'functor', 'HOF'],
-    displayDate: '2019-01-30T14:39:47.440Z'
-  },
-  {
-    id: 3,
-    title: 'dolores',
-    author: 'Rudolph Reilly',
-    url: '/posts/3',
-    published: 1551858558087,
-    tags: ['composition', 'monad', 'functor', 'HOF'],
-    displayDate: '2019-03-06T07:49:18.087Z'
-  },
-  {
-    id: 4,
-    title: 'hic',
-    author: 'Joshua Mills',
-    url: '/posts/4',
-    published: 1549063917383,
-    tags: [
-      'functional programming',
-      'monad',
-      'composition',
-      'reactive programing'
+    "id": 1,
+    "title": "Quis molestiae tempora eligendi omnis quisquam quisquam quos",
+    "author": "Willa Jast",
+    "url": "/posts/1",
+    "published": 1553081686690,
+    "tags": [
+      "reactive programing",
+      "functional programming",
+      "curry",
+      "composition"
     ],
-    displayDate: '2019-02-01T23:31:57.383Z'
+    "displayDate": "2019-03-20T11:34:46.690Z",
+    "likes": 18,
+    "dislikes": 13
   },
   {
-    id: 5,
-    title: 'possimus',
-    author: 'Ardith Hills Sr.',
-    url: '/posts/5',
-    published: 1549123181102,
-    tags: [
-      'functor',
-      'functional programming',
-      'reactive programing',
-      'composition'
+    "id": 2,
+    "title": "Provident quo provident",
+    "author": "Elian Stanton",
+    "url": "/posts/2",
+    "published": 1548009014087,
+    "tags": [
+      "functor",
+      "functional programming",
+      "partial application",
+      "monad"
     ],
-    displayDate: '2019-02-02T15:59:41.102Z'
+    "displayDate": "2019-01-20T18:30:14.087Z",
+    "likes": 9,
+    "dislikes": 24
   },
   {
-    id: 6,
-    title: 'voluptatem',
-    author: 'Nick Schmeler',
-    url: '/posts/6',
-    published: 1553299404935,
-    tags: [
-      'functional programming',
-      'composition',
-      'functor',
-      'reactive programing'
+    "id": 3,
+    "title": "Et quia quos",
+    "author": "Arely Hahn PhD",
+    "url": "/posts/3",
+    "published": 1550523353648,
+    "tags": [
+      "functor",
+      "functional programming",
+      "monad",
+      "reactive programing"
     ],
-    displayDate: '2019-03-23T00:03:24.935Z'
+    "displayDate": "2019-02-18T20:55:53.648Z",
+    "likes": 11,
+    "dislikes": 9
   },
   {
-    id: 7,
-    title: 'et',
-    author: 'Alexandro Howe',
-    url: '/posts/7',
-    published: 1546780644102,
-    tags: ['functional programming', 'functor', 'monad', 'reactive programing'],
-    displayDate: '2019-01-06T13:17:24.102Z'
-  },
-  {
-    id: 8,
-    title: 'blanditiis',
-    author: 'Enrique Kiehn Jr.',
-    url: '/posts/8',
-    published: 1548291880538,
-    tags: ['functor', 'functional programming', 'monad', 'composition'],
-    displayDate: '2019-01-24T01:04:40.538Z'
-  },
-  {
-    id: 9,
-    title: 'autem',
-    author: 'Llewellyn Ferry',
-    url: '/posts/9',
-    published: 1550672609202,
-    tags: ['functional programming', 'monad', 'functor', 'reactive programing'],
-    displayDate: '2019-02-20T14:23:29.202Z'
-  },
-  {
-    id: 10,
-    title: 'voluptas',
-    author: 'Lulu Rolfson',
-    url: '/posts/10',
-    published: 1546388026403,
-    tags: [
-      'functional programming',
-      'functor',
-      'partial application',
-      'composition'
+    "id": 4,
+    "title": "Esse nobis et sint magnam aut",
+    "author": "Winona Feeney",
+    "url": "/posts/4",
+    "published": 1549389920002,
+    "tags": [
+      "functional programming",
+      "monad",
+      "point free",
+      "composition"
     ],
-    displayDate: '2019-01-02T00:13:46.403Z'
+    "displayDate": "2019-02-05T18:05:20.002Z",
+    "likes": 87,
+    "dislikes": 27
+  },
+  {
+    "id": 5,
+    "title": "Blanditiis libero ut qui quo fuga enim",
+    "author": "Ronny Dare",
+    "url": "/posts/5",
+    "published": 1548908162122,
+    "tags": [
+      "composition",
+      "functor",
+      "monad",
+      "functional programming"
+    ],
+    "displayDate": "2019-01-31T04:16:02.122Z",
+    "likes": 73,
+    "dislikes": 30
+  },
+  {
+    "id": 6,
+    "title": "Mollitia enim iste molestias nesciunt minima",
+    "author": "Maureen Brekke II",
+    "url": "/posts/6",
+    "published": 1546457835407,
+    "tags": [
+      "functional programming",
+      "functor",
+      "natural transformation",
+      "HOF"
+    ],
+    "displayDate": "2019-01-02T19:37:15.407Z",
+    "likes": 71,
+    "dislikes": 17
+  },
+  {
+    "id": 7,
+    "title": "Ex quidem omnis",
+    "author": "Dr. Alphonso Pollich",
+    "url": "/posts/7",
+    "published": 1555991699818,
+    "tags": [
+      "monad",
+      "composition",
+      "functor",
+      "functional programming"
+    ],
+    "displayDate": "2019-04-23T03:54:59.818Z",
+    "likes": 19,
+    "dislikes": 26
+  },
+  {
+    "id": 8,
+    "title": "Illum at natus eum cum ipsam consequatur",
+    "author": "Cedrick Johnson",
+    "url": "/posts/8",
+    "published": 1549160216663,
+    "tags": [
+      "monad",
+      "functional programming",
+      "reactive programing",
+      "functor"
+    ],
+    "displayDate": "2019-02-03T02:16:56.663Z",
+    "likes": 66,
+    "dislikes": 28
+  },
+  {
+    "id": 9,
+    "title": "Ut nostrum ducimus occaecati",
+    "author": "Elena Wyman",
+    "url": "/posts/9",
+    "published": 1549701045570,
+    "tags": [
+      "functional programming",
+      "monad",
+      "functor",
+      "reactive programing"
+    ],
+    "displayDate": "2019-02-09T08:30:45.570Z",
+    "likes": 99,
+    "dislikes": 26
+  },
+  {
+    "id": 10,
+    "title": "Dolorem beatae et molestiae consequatur sed rerum qui voluptates unde",
+    "author": "Alek Grimes DDS",
+    "url": "/posts/10",
+    "published": 1549702735187,
+    "tags": [
+      "reactive programing",
+      "functional programming",
+      "monad",
+      "functor"
+    ],
+    "displayDate": "2019-02-09T08:58:55.187Z",
+    "likes": 78,
+    "dislikes": 25
   }
 ]
-```
-
-## Result examples
-
-```js
-const result = {
-  'functional programming': [
-    {
-      id: 1,
-      title: 'qui',
-      author: 'Vincenza Schuster Sr.',
-      url: '/posts/1',
-      published: 1554273834917,
-      tags: [
-        'functional programming',
-        'functor',
-        'monad',
-        'reactive programing'
-      ],
-      displayDate: '2019-04-03T06:43:54.917Z',
-      tag: 'functional programming'
-    },
-    {
-      id: 6,
-      title: 'voluptatem',
-      author: 'Nick Schmeler',
-      url: '/posts/6',
-      published: 1553299404935,
-      tags: [
-        'functional programming',
-        'composition',
-        'functor',
-        'reactive programing'
-      ],
-      displayDate: '2019-03-23T00:03:24.935Z',
-      tag: 'functional programming'
-    }
-  ],
-  functor: [
-    {
-      id: 1,
-      title: 'qui',
-      author: 'Vincenza Schuster Sr.',
-      url: '/posts/1',
-      published: 1554273834917,
-      tags: [
-        'functional programming',
-        'functor',
-        'monad',
-        'reactive programing'
-      ],
-      displayDate: '2019-04-03T06:43:54.917Z',
-      tag: 'functor'
-    },
-    {
-      id: 6,
-      title: 'voluptatem',
-      author: 'Nick Schmeler',
-      url: '/posts/6',
-      published: 1553299404935,
-      tags: [
-        'functional programming',
-        'composition',
-        'functor',
-        'reactive programing'
-      ],
-      displayDate: '2019-03-23T00:03:24.935Z',
-      tag: 'functor'
-    }
-  ],
-  monad: [
-    {
-      id: 1,
-      title: 'qui',
-      author: 'Vincenza Schuster Sr.',
-      url: '/posts/1',
-      published: 1554273834917,
-      tags: [
-        'functional programming',
-        'functor',
-        'monad',
-        'reactive programing'
-      ],
-      displayDate: '2019-04-03T06:43:54.917Z',
-      tag: 'monad'
-    }
-  ],
-  'reactive programing': [
-    {
-      id: 1,
-      title: 'qui',
-      author: 'Vincenza Schuster Sr.',
-      url: '/posts/1',
-      published: 1554273834917,
-      tags: [
-        'functional programming',
-        'functor',
-        'monad',
-        'reactive programing'
-      ],
-      displayDate: '2019-04-03T06:43:54.917Z',
-      tag: 'reactive programing'
-    },
-    {
-      id: 6,
-      title: 'voluptatem',
-      author: 'Nick Schmeler',
-      url: '/posts/6',
-      published: 1553299404935,
-      tags: [
-        'functional programming',
-        'composition',
-        'functor',
-        'reactive programing'
-      ],
-      displayDate: '2019-03-23T00:03:24.935Z',
-      tag: 'reactive programing'
-    }
-  ],
-  composition: [
-    {
-      id: 6,
-      title: 'voluptatem',
-      author: 'Nick Schmeler',
-      url: '/posts/6',
-      published: 1553299404935,
-      tags: [
-        'functional programming',
-        'composition',
-        'functor',
-        'reactive programing'
-      ],
-      displayDate: '2019-03-23T00:03:24.935Z',
-      tag: 'composition'
-    }
-  ]
-}
 ```

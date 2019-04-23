@@ -3,16 +3,12 @@ const {
   descend,
   ascend,
   sortWith,
-  map
-} = require('../lib')
+} = require('ramda')
 
-// sortPosts :: [post] -> [post]
-const sortPosts = sortWith([
+// sortByPublishedDate :: [post] -> [post]
+const sortByPublishedDate = sortWith([
   descend(prop('published')),
   ascend(prop('title'))
 ])
 
-// sortGroupedByTags :: { tag: [post]} -> { tag: [post]}
-const sortGroupedByTags = map(sortPosts)
-
-module.exports = sortGroupedByTags
+module.exports = sortByPublishedDate
