@@ -1,4 +1,11 @@
-const posts = require('./posts')
-const sortByPublishedDate = require('./sortByPublishedDate')
+const {
+  filter,
+} = require('ramda')
 
-console.log(sortByPublishedDate(posts))
+const posts = require('./posts')
+const isWithinLastDays = require('./isWithinLastDays')
+
+// recent :: [post] -> [post]
+const recent = filter(isWithinLastDays(30))
+
+console.log(recent(posts))

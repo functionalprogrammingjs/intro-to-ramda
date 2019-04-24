@@ -1,4 +1,4 @@
 const posts = require('./posts')
-const groupByTags = require('./groupByTags')
+const sortByPublishedDate = require('./sortByPublishedDate')
 
-console.log(groupByTags(posts))
+console.log(sortByPublishedDate(posts))

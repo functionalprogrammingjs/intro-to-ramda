@@ -4,10 +4,10 @@ Given a set of posts do with a functional approach:
 
 1. Get the first tag of each post in upper case
 2. Get all tags that have been used in any post
-3. Sort posts by descending date (if equal, alphabetically by title)
-4. Group posts by tag
-5. (1) + (2)
-6. (3) + only recent posts (last 30 days)
+3. Show only recent posts (last 30 days)
+4. Sort posts by descending date (if equal, alphabetically by title)
+5. (3) + (4)
+6. (5) grouped by tag
 7. Show newest post
 8. Show newest post for each tag
 9. Show newest AND oldest post for each tag
