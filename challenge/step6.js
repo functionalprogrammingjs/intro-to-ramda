@@ -1,19 +1,19 @@
 const {
   compose,
   map,
-  prop,
+  filter,
 } = require('ramda')
 
 const posts = require('./posts')
+const sortByPublishedDate = require('./sortByPublishedDate')
 const groupByTags = require('./groupByTags')
-const { arrayMaxBy } = require('./util')
+const isWithinLastDays = require('./isWithinLastDays')
 
-// newest :: [post] -> post
-const newest = arrayMaxBy(prop('published'))
-
-const newestByTag = compose(
-  map(newest),
+// groupAndSortRecent :: [post] -> { [tag]: [post] }
+const groupAndSortRecent = compose(
+  map(sortByPublishedDate),
   groupByTags,
+  filter(isWithinLastDays(30)),
 )
 
-console.log(newestByTag(posts))
+console.log(groupAndSortRecent(posts))

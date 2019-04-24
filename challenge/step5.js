@@ -1,11 +1,16 @@
 const {
-  prop,
+  compose,
+  map,
 } = require('ramda')
 
 const posts = require('./posts')
-const { arrayMaxBy } = require('./util')
+const sortByPublishedDate = require('./sortByPublishedDate')
+const groupByTags = require('./groupByTags')
 
-// newest :: [post] -> post
-const newest = arrayMaxBy(prop('published'))
+// groupAndSort :: [post] -> { [tag]: [post] }
+const groupAndSort = compose(
+  map(sortByPublishedDate),
+  groupByTags,
+)
 
-console.log(newest(posts))
+console.log(groupAndSort(posts))

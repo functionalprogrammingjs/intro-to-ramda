@@ -1,17 +1,19 @@
 # intro-to-ramda
 
-Given a set of posts to do with a functional approach:
+Given a set of posts do with a functional approach:
 
-1. Sort posts by descending date (if equal, alphabetically by title)
-2. Group posts by tag
-3. (1) + (2)
-4. (3) + only recent posts (last 30 days)
-5. Show newest post
-6. Show newest post for each tag
-7. Show newest AND oldest post for each tag
-8. Get mean post score
-9. Get mean post score for each tag
-10. Get the score deviation for each tag
+1. Get the first tag of each post in upper case
+2. Get all tags that have been used in any post
+3. Sort posts by descending date (if equal, alphabetically by title)
+4. Group posts by tag
+5. (1) + (2)
+6. (3) + only recent posts (last 30 days)
+7. Show newest post
+8. Show newest post for each tag
+9. Show newest AND oldest post for each tag
+10. Get mean post score
+11. Get mean post score for each tag
+12. Get the score deviation for each tag
 
 ## Folders
 

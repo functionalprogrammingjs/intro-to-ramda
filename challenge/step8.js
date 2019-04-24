@@ -1,4 +1,19 @@
-const posts = require('./posts')
-const { averageScore } = require('./scores')
+const {
+  compose,
+  map,
+  prop,
+} = require('ramda')
 
-console.log(averageScore(posts))
+const posts = require('./posts')
+const groupByTags = require('./groupByTags')
+const { arrayMaxBy } = require('./util')
+
+// newest :: [post] -> post
+const newest = arrayMaxBy(prop('published'))
+
+const newestByTag = compose(
+  map(newest),
+  groupByTags,
+)
+
+console.log(newestByTag(posts))
