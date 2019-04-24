@@ -1,19 +1,4 @@
-const {
-  compose,
-  map,
-  filter,
-} = require('ramda')
-
 const posts = require('./posts')
-const sortByPublishedDate = require('./sortByPublishedDate')
-const groupByTags = require('./groupByTags')
-const isWithinLastDays = require('./isWithinLastDays')
+const { averageScore } = require('./scores')
 
-// groupAndSortRecent :: [post] -> { [tag]: [post] }
-const groupAndSortRecent = compose(
-  map(sortByPublishedDate),
-  groupByTags,
-  filter(isWithinLastDays(30)),
-)
-
-console.log(groupAndSortRecent(posts))
+console.log(averageScore(posts))

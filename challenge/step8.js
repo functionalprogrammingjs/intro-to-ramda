@@ -1,19 +1,16 @@
 const {
   compose,
   map,
-  prop,
 } = require('ramda')
 
 const posts = require('./posts')
 const groupByTags = require('./groupByTags')
-const { arrayMaxBy } = require('./util')
+const { averageScore } = require('./scores')
 
-// newest :: [post] -> post
-const newest = arrayMaxBy(prop('published'))
-
-const newestByTag = compose(
-  map(newest),
+// averageScoreByTag :: [post] -> { [tag]: number }
+const averageScoreByTag = compose(
+  map(averageScore),
   groupByTags,
 )
 
-console.log(newestByTag(posts))
+console.log(averageScoreByTag(posts))

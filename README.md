@@ -7,13 +7,13 @@ Given a set of posts do with a functional approach:
 3. Show only recent posts (last 30 days)
 4. Sort posts by descending date (if equal, alphabetically by title)
 5. (3) + (4)
-6. (5) grouped by tag
-7. Show newest post
-8. Show newest post for each tag
-9. Show newest AND oldest post for each tag
-10. Get mean post score
-11. Get mean post score for each tag
-12. Get the score deviation for each tag
+6. Get mean post score
+7. (5) grouped by tag
+8. Get mean post score for each tag
+9. Get the score deviation for each tag
+10. Show newest post
+11. Show newest post for each tag
+12. Show newest AND oldest post for each tag
 
 ## Folders
 
