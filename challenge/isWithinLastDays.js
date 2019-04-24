@@ -3,22 +3,21 @@ const {
   compose,
   prop,
   __,
-  useWith,
-  curryN,
+  curry,
 } = require('ramda')
 
 // daysAgoInTimestamp :: Number -> timestamp
-const daysAgoInTimestamp = days => new Date().getTime() - (60 * 60 * 24 * days)
+const daysAgoInTimestamp = days => Date.now() - (1000 * 60 * 60 * 24 * days)
 
 // timestampWithinLastDays :: timestamp -> Boolean
 const isTimestampWithinLastDays = days => gte(__, daysAgoInTimestamp(days))
 
 // postWithinLastDays :: (days, post) -> Boolean
-const isWithinLastDays = curryN(2, days =>
+const isWithinLastDays = curry((days, post) =>
   compose(
     isTimestampWithinLastDays(days),
     prop('published'),
-  )
+  )(post)
 )
 
 module.exports = isWithinLastDays
