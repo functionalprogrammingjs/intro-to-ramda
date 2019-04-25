@@ -8,6 +8,7 @@ const {
   map,
   omit,
   groupBy,
+  identity,
 } = require('ramda')
 
 // postsByTags :: (post, [tags]) -> [posts]
