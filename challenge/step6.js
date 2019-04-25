@@ -1,4 +1,4 @@
 const posts = require('./posts')
-const { averageScore } = require('./scores')
+const averageLikes = require('./averageLikes')
 
-console.log(averageScore(posts))
+console.log(averageLikes(posts))

@@ -5,12 +5,12 @@ const {
 
 const posts = require('./posts')
 const groupByTags = require('./groupByTags')
-const { averageScore } = require('./scores')
+const averageLikes = require('./averageLikes')
 
-// averageScoreByTag :: [post] -> { [tag]: number }
-const averageScoreByTag = compose(
-  map(averageScore),
+// averageLikesByTag :: [post] -> { [tag]: number }
+const averageLikesByTag = compose(
+  map(averageLikes),
   groupByTags,
 )
 
-console.log(averageScoreByTag(posts))
+console.log(averageLikesByTag(posts))

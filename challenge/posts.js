@@ -44,7 +44,6 @@ const post = (id) => {
     'tags': randomTags(),
     'displayDate': published,
     likes: faker.random.number(100),
-    dislikes: faker.random.number(30),
   }
 }
 

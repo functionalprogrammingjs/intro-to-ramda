@@ -7,21 +7,21 @@ const {
 
 const posts = require('./posts')
 const groupByTags = require('./groupByTags')
-const { averageScore } = require('./scores')
+const averageLikes = require('./averageLikes')
 
-// averageScoreByTag :: [post] -> { [tag]: number }
-const averageScoreByTag = compose(
-  map(averageScore),
+// averageLikesByTag :: [post] -> { [tag]: number }
+const averageLikesByTag = compose(
+  map(averageLikes),
   groupByTags,
 )
 
 // scoreDeviationByTag :: [post] -> { [tag]: number }
-const scoreDeviationByTag = converge(
+const likesDeviationByTag = converge(
   map,
   [
-    compose(subtract, averageScore),
-    averageScoreByTag,
+    compose(subtract, averageLikes),
+    averageLikesByTag,
   ],
 )
 
-console.log(scoreDeviationByTag(posts))
+console.log(likesDeviationByTag(posts))
