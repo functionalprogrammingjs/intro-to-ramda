@@ -5,7 +5,7 @@ const {
   compose,
 } = require('ramda')
 
-const posts = require('./posts')
+const posts = require('../api/posts')
 
 // allTags :: [post] -> [string]
 const allTags = chain(prop('tags'))

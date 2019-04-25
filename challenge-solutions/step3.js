@@ -2,7 +2,7 @@ const {
   filter,
 } = require('ramda')
 
-const posts = require('./posts')
+const posts = require('../api/posts')
 const isWithinLastDays = require('./isWithinLastDays')
 
 // recent :: [post] -> [post]

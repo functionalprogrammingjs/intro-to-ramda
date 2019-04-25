@@ -6,7 +6,7 @@ const {
   prop,
 } = require('ramda')
 
-const posts = require('./posts')
+const posts = require('../api/posts')
 
 // upperCaseFirstTag :: post -> string
 const upperCaseFirstTag = compose(

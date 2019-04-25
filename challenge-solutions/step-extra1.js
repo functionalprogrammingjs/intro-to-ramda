@@ -3,7 +3,7 @@ const {
   map,
 } = require('ramda')
 
-const posts = require('./posts')
+const posts = require('../api/posts')
 const groupByTags = require('./groupByTags')
 const averageLikes = require('./averageLikes')
 

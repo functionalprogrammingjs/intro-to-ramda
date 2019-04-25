@@ -1,3 +1,3 @@
-const posts = require('./posts')
+const posts = require('../api/posts')
 
 console.log(posts)

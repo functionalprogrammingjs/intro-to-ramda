@@ -4,7 +4,7 @@ const {
   filter,
 } = require('ramda')
 
-const posts = require('./posts')
+const posts = require('../api/posts')
 const sortByPublishedDate = require('./sortByPublishedDate')
 const groupByTags = require('./groupByTags')
 const isWithinLastDays = require('./isWithinLastDays')
